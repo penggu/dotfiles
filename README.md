@@ -1,4 +1,4 @@
-# holman does dotfiles
+# peng does dotfiles
 
 Your dotfiles are how you personalize your system. These are mine.
 
@@ -9,7 +9,7 @@ up into the main areas I used (Ruby, git, system libraries, and so on), so I
 structured the project accordingly.
 
 If you're interested in the philosophy behind why projects like these are
-awesome, you might want to [read my post on the
+awesome, you might want to [read Zach's post on the
 subject](http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/).
 
 ## topical
@@ -79,9 +79,9 @@ and I'd love to get it fixed for you!
 
 ## thanks
 
-I forked [Ryan Bates](http://github.com/ryanb)' excellent
-[dotfiles](http://github.com/ryanb/dotfiles) for a couple years before the
-weight of my changes and tweaks inspired me to finally roll my own. But Ryan's
+I forked [Zach Holman](https://github.com/holman)' excellent
+[dotfiles](https://github.com/holman/dotfiles) for a couple years before the
+weight of my changes and tweaks inspired me to finally roll my own. But Zach's
 dotfiles were an easy way to get into bash customization, and then to jump ship
 to zsh a bit later. A decent amount of the code in these dotfiles stem or are
-inspired from Ryan's original project.
+inspired from Zach's original project.
