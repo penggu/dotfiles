@@ -16,6 +16,7 @@
         ui = true
 [core]
         excludesfile = ~/.gitignore
+        autocrlf = true
         editor = vim
 [apply]
         whitespace = nowarn
