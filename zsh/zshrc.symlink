@@ -44,7 +44,7 @@ unset config_files
 # For oh-my-zsh #
 #################
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/peng.gu/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -53,7 +53,7 @@ export ZSH=/Users/peng.gu/.oh-my-zsh
 # ZSH_THEME="robbyrussell"
 ZSH_THEME="agnoster"
 
-DEFAULT_USER=peng.gu
+DEFAULT_USER=$(whoami)
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
