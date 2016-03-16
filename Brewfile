@@ -28,6 +28,7 @@ brew 'wget'
 brew 'youtube-dl'
 
 cask '1password'
+cask 'iterm2'
 cask 'adium'
 cask 'atom'
 cask 'firefox'
