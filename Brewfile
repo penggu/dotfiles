@@ -26,6 +26,8 @@ brew 'unrar'
 brew 'wget'
 brew 'youtube-dl'
 brew 'wakeonlan'
+brew 'maven'
+brew 'ant'
 
 cask '1password'
 cask 'adium'
