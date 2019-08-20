@@ -1,3 +1,99 @@
+" Make vim a python IDE
+
+" First, we need to make sure that vim is not attempting to retain compatibility
+"  with vi, its predecessor. This is a vundle requirement. When vim attempts to
+" be compatible, it disables most of the features that make it worth using over
+" vi.
+set nocompatible
+
+" We also want to turn off the default "filetype" controls for now because the
+" way that vim caches filetype rules at runtime interferes with the way that
+" vundle alters the runtime environment. We will change this back later:
+filetype off
+
+" Next, we'll need to then adjust vim's runtime path to include the vundle
+" location we cloned from GitHub. After that, we will call the vundle
+" initialization function:
+set rtp+=~/.vim/bundle/vundle/
+
+call vundle#begin()
+
+" Now, our vundle system is initialized and we can add in the plugins that we
+" wish to manage. While vundle can manage local plugins, one of its strengths
+" is the ability to tie local versions to online versions, which allows you to
+" auto update, etc.
+"
+" We can do this by pointing to GitHub repositories, vim scripts, other remote
+" git repositories, and local git repositories.
+"
+" First of all, we must manage the vundle package itself with vundle. Then we
+" can add whatever additional plugins we'd like:
+
+" This is the Vundle package, which can be found on GitHub.
+" For GitHub repos, you specify plugins using the
+" 'user/repository' format
+Plugin 'gmarik/vundle'
+
+" We could also add repositories with a ".git" extension
+Plugin 'scrooloose/nerdtree.git'
+
+" To get plugins from Vim Scripts, you can reference the plugin
+" by name as it appears on the site
+Plugin 'vim-scripts/Buffergator'
+
+" https://vimawesome.com/plugin/python-mode
+" Vim python-mode. PyLint, Rope, Pydoc, breakpoints from box.
+Plugin 'klen/python-mode'
+
+" auto-complete made easy
+" Plugin 'valloric/youcompleteme'
+
+call vundle#end()
+
+" Now we can turn our filetype functionality back on
+filetype plugin indent on
+
+" Auto reload .vimrc file
+" autocmd! bufwritepost .vimrc source %
+
+" Better copy & paste
+set pastetoggle=<F2>
+set clipboard=unnamed
+
+" Mouse and backspace
+" set mouse=a " On OSX press ALT and click
+" set bs=2    " make backspace behave like normal again
+
+" Rebind <Leader> key
+let mapleader = ","
+
+" bind CTRL+<movement> keys to move around windows, instead of using
+" CTRL+w+<movement> keys
+map <c-h> <c-w>h
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+
+" easier moving between tabs
+map <Leader>N <esc>:tabprevious<CR>
+map <Leader>n <esc>:tabnext<CR>
+
+" map sort function to a key
+vnoremap <Leader>s :sort<CR>
+
+" easier moving of code blocks
+vnoremap < <gv " less indent
+vnoremap > >gv " more indent
+
+
+" TODO: autocomplete does not work on MacOS, make it work
+" set python version, needed by python-mode
+" let g:pymode_python = 'python3'
+" let g:pymode_rope_completion = 1
+" let g:pymode_rope_completion_bind = '<C-t>'
+
+syntax on
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maintainer:
 "       Amir Salihefendic
