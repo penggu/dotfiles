@@ -24,6 +24,7 @@
 "
 " Sections:
 "    -> General
+"    -> Vundle
 "    -> VIM user interface
 "    -> Colors and Fonts
 "    -> Files and backups
@@ -73,6 +74,16 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'fatih/vim-go'
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'vim-scripts/Buffergator'
+Plugin 'python-mode/python-mode'
+" TODO: autocomplete does not work on MacOS, make it work
+" Plugin 'valloric/youcompleteme'
+" set python version, needed by python-mode
+" let g:pymode_python = 'python3'
+" let g:pymode_rope_completion = 1
+" let g:pymode_rope_completion_bind = '<C-t>'
+
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -111,8 +122,32 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+" Auto reload .vimrc file
+autocmd! bufwritepost .vimrc source %
 
+" Better copy & paste
+set pastetoggle=<F2>
+set clipboard=unnamed
 
+" Mouse and backspace
+" set mouse=a " On OSX press ALT and click
+" set bs=2    " make backspace behave like normal again
+
+" Rebind <Leader> key
+let mapleader = ","
+
+" easier moving between tabs
+map <Leader>N <esc>:tabprevious<CR>
+map <Leader>n <esc>:tabnext<CR>
+
+" map sort function to a key
+vnoremap <Leader>s :sort<CR>
+
+" easier moving of code blocks
+vnoremap < <gv " less indent
+vnoremap > >gv " more indent
+
+syntax on
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -256,10 +291,11 @@ map k gk
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
-" Smart way to move between windows
+" bind CTRL+<movement> keys to move around windows, instead of using
+" CTRL+w+<movement> keys
+map <C-h> <C-W>h
 map <C-j> <C-W>j
 map <C-k> <C-W>k
-map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " Close the current buffer
