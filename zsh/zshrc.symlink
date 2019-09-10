@@ -130,3 +130,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+# Example ssh jump box setup
+export JUMP_BOX_IP=10.213.43.167
+export VM_TARGET_IP=35
+alias ssh_tunnel_JUMP_BOX_IP='ssh -f user@${JUMP_BOX_IP} -L localhost:${VM_TARGET_IP}22:192.168.122.${VM_TARGET_IP}:22 -N'
+alias ssh_jump_to_VM='ssh -p ${VM_TARGET_IP}22 user@localhost'
